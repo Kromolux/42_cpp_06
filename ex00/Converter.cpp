@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 10:27:56 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/22 22:22:37 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/05/22 23:34:42 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	Converter::convert(void)
 		break;
 	case TYPE_INT:
 		this->_typeAsString = "int\n";
-		tmpLongInt = std::atol(_UserInput.c_str());
+		tmpLongInt = atol(_UserInput.c_str());
 		if (_UserInput.length() > 11 || tmpLongInt > std::numeric_limits<int>::max() || tmpLongInt < std::numeric_limits<int>::min())
 		{
 			_charOverflow = true;
@@ -81,7 +81,7 @@ void	Converter::convert(void)
 		}
 		if (tmpLongInt > std::numeric_limits<char>::max() || tmpLongInt < std::numeric_limits<char>::min())
 			_charOverflow = true;
-		this->_myInt = std::atoi(_UserInput.c_str());
+		this->_myInt = atoi(_UserInput.c_str());
 		this->_myChar = static_cast<char>(_myInt);
 		this->_myFloat = static_cast<float>(_myInt);
 		this->_myDouble = static_cast<double>(_myInt);

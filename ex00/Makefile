@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+         #
+#    By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/22 07:06:15 by rkaufman          #+#    #+#              #
-#    Updated: 2022/05/22 22:20:07 by rkaufman         ###   ########.fr        #
+#    Updated: 2022/05/22 23:40:15 by rkaufman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,14 @@ leak:
 
 test:
 	./$(NAME) 0
+	./$(NAME) P
+	./$(NAME) ZU
 	./$(NAME) nan
-	./$(NAME) 42.0f
-	./$(NAME) 65.0
+	./$(NAME) 42.42f
+	./$(NAME) 65.65
 	./$(NAME) -inff
+	./$(NAME) 65489616545.65
+	./$(NAME) 15454568454651561653435865488946519616545.65
+	./$(NAME) 6548894848994848484865154645454564659616545.65f
 
 .PHONY: clean fclean re test

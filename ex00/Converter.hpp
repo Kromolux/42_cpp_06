@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Converter.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 10:22:09 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/22 22:09:03 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/05/22 23:35:36 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #ifndef CONVERTER_HPP
 # define CONVERTER_HPP
 # include <iostream>
+# include <limits>
 # include <iomanip>
+# include <cstdlib>
 # include <cerrno>
 # include "colors.h"
 
