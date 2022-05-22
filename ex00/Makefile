@@ -6,7 +6,7 @@
 #    By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/22 07:06:15 by rkaufman          #+#    #+#              #
-#    Updated: 2022/05/22 16:07:09 by rkaufman         ###   ########.fr        #
+#    Updated: 2022/05/22 22:20:07 by rkaufman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,9 +43,16 @@ fclean: clean
 re: fclean all
 
 val:
-	valgrind --leak-check=full -s ./$(NAME)
+	valgrind --leak-check=full -s ./$(NAME) 42.0
 
 leak:
-	leaks --atExit -- ./$(NAME)
+	leaks --atExit -- ./$(NAME) 42.0
 
-.PHONY: clean fclean re
+test:
+	./$(NAME) 0
+	./$(NAME) nan
+	./$(NAME) 42.0f
+	./$(NAME) 65.0
+	./$(NAME) -inff
+
+.PHONY: clean fclean re test

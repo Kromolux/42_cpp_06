@@ -6,7 +6,7 @@
 #    By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/22 07:11:13 by rkaufman          #+#    #+#              #
-#    Updated: 2022/05/22 07:11:42 by rkaufman         ###   ########.fr        #
+#    Updated: 2022/05/22 23:19:18 by rkaufman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME		:=	identify
 
 CC			:=	c++
 
-SRCS		:=	main.cpp \
-				Bureaucrat.cpp
+SRCS		:=	main.cpp
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 

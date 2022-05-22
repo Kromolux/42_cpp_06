@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 07:12:10 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/22 20:03:11 by rkaufman         ###   ########.fr       */
+/*   Created: 2022/05/22 22:49:47 by rkaufman          #+#    #+#             */
+/*   Updated: 2022/05/22 23:21:56 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Converter.hpp"
+#pragma once
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int	main(int const argc, char const **argv)
+class Base
 {
-	if (argc != 2)
-	{
-		std::cout << "Error\nProgram needs one argument to convert!\nchar, int, float or double in decimal notation.\n";
-		return (-1);
-	}
-	Converter	userInput(argv[1]);
-	userInput.convert();
-	std::cout	<< userInput;
-	return (0);
-}
+	public:
+		virtual ~Base(void) {}
+	protected:
+
+	private:
+};
+
+class A : public Base
+{};
+
+class B : public Base
+{};
+
+class C : public Base
+{};
+
+#endif

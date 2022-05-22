@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 10:22:09 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/22 15:50:24 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/05/22 22:09:03 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #ifndef CONVERTER_HPP
 # define CONVERTER_HPP
 # include <iostream>
+# include <iomanip>
+# include <cerrno>
 # include "colors.h"
 
 typedef enum e_type {
@@ -33,7 +35,16 @@ class	Converter
 		Converter const & operator=(Converter const & input);
 		~Converter(void);
 	
-		void	convert(void);
+		void				convert(void);
+
+		void				getChar(std::ostream & o) const;
+		void				getInt(std::ostream & o) const;
+		void				getFloat(std::ostream & o) const;
+		void				getDouble(std::ostream & o) const;
+		void				getTypeString(std::ostream & o) const;
+
+		bool				getSpecialType(void) const;
+		int					getPrecision(void) const;
 
 	protected:
 
@@ -46,19 +57,25 @@ class	Converter
 		bool				isInt(void);
 		bool				isFloat(void);
 		bool				isDouble(void);
-	
+		
 		int					_type;
+		std::string			_typeAsString;
 
 		bool				_specialType;
-
+		bool				_charOverflow;
+		bool				_intOverflow;
+		bool				_floatOverflow;
+		bool				_doubleOverflow;
+		
 		std::string	const	_UserInput;
 		char				_myChar;
 		int					_myInt;
 		float				_myFloat;
 		double				_myDouble;
 
+		int					_precision;
 };
 
-std::ostream & operator<<(std::ostream & o, Converter const & input);
+std::ostream & operator<<(std::ostream & o, Converter const & obj);
 
 #endif

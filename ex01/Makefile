@@ -6,7 +6,7 @@
 #    By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/22 07:07:21 by rkaufman          #+#    #+#              #
-#    Updated: 2022/05/22 07:10:51 by rkaufman         ###   ########.fr        #
+#    Updated: 2022/05/22 22:26:26 by rkaufman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME		:=	serialize
 
 CC			:=	c++
 
-SRCS		:=	main.cpp \
-				Bureaucrat.cpp
+SRCS		:=	main.cpp
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 
